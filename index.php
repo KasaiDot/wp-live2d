@@ -53,12 +53,7 @@ function live2d_widget_init(){
 }
 
 function live2d_add_css() {
-	$file = plugins_url("css/style.css", __FILE__);
-
-	if (file_exists($file)) {
-		wp_register_style("wp-live2d", $file);
-		wp_enqueue_style("wp-live2d");
-	}
+	wp_enqueue_style("wp-live2d-style", plugins_url("css/style.css", __FILE__));
 }
 
 function live2d_add_js() {
