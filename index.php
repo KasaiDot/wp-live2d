@@ -57,17 +57,15 @@ function live2d_add_css() {
 }
 
 function live2d_add_js() {
-	wp_enqueue_script("1", plugins_url("js/live2d/Live2D.min.js", __FILE__));
-	wp_enqueue_script("2", plugins_url("js/live2d/Live2DFramework.js", __FILE__));
-
-	wp_enqueue_script("3", plugins_url("js/live2d/MatrixStack.js", __FILE__));
-	wp_enqueue_script("4", plugins_url("js/live2d/ModelSettingJson.js", __FILE__));
-
-	wp_enqueue_script("5", plugins_url("js/live2d/PlatformManager.js", __FILE__));
-	wp_enqueue_script("6", plugins_url("js/live2d/LAppModel.js", __FILE__));
-	wp_enqueue_script("7", plugins_url("js/live2d/App.js", __FILE__));
-	wp_enqueue_script("8", plugins_url("js/model/LAppDefine.js", __FILE__));
-	wp_enqueue_script("9", plugins_url("js/model/LAppLive2DManager.js", __FILE__));
+	wp_enqueue_script("wp-live2d-lib", plugins_url("js/live2d/Live2D.min.js", __FILE__));
+	wp_enqueue_script("wp-live2d-framework", plugins_url("js/live2d/Live2DFramework.js", __FILE__));
+	wp_enqueue_script("wp-live2d-matrix", plugins_url("js/live2d/MatrixStack.js", __FILE__));
+	wp_enqueue_script("wp-live2d-modelsetting", plugins_url("js/live2d/ModelSettingJson.js", __FILE__));
+	wp_enqueue_script("wp-live2d-platformmanager", plugins_url("js/live2d/PlatformManager.js", __FILE__));
+	wp_enqueue_script("wp-live2d-appmodel", plugins_url("js/live2d/LAppModel.js", __FILE__));
+	wp_enqueue_script("wp-live2d-app", plugins_url("js/live2d/App.js", __FILE__));
+	wp_enqueue_script("wp-live2d-appdefine", plugins_url("js/model/LAppDefine.js", __FILE__));
+	wp_enqueue_script("wp-live2d-appmanager", plugins_url("js/model/LAppLive2DManager.js", __FILE__));
 }
 
 if (get_option("live2d_status")) {
