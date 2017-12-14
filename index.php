@@ -1,13 +1,13 @@
 <?php
 /**
  * @package WP_Live2D
- * @version 0.1.6.3
+ * @version 0.1.6.4
  */
 
 /*
 Plugin Name: Live2D
 Description: Live2D Plugin
-Version: 0.1.6.3
+Version: 0.1.6.4
 Author: Kasai.
 Author URI: http://kasai.moe
 License : GPLv3 or later
