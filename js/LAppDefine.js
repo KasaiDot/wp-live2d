@@ -24,7 +24,7 @@ var LAppDefine = {
 
     MODEL_DEFAULT:{
         model:"model.moc",
-        modelHomeDir:"wp-content/plugins/wp-live2d/model/default/",
+        modelHomeDir:"/wp-content/plugins/wp-live2d/models/default/",
         textures:[
             "textures/0.png",
             "textures/1.png",
@@ -54,7 +54,7 @@ var LAppDefine = {
     },
     MODEL_DEFAULT_XMAS:{
         model:"model.moc",
-        modelHomeDir:"wp-content/plugins/wp-live2d/model/default-xmas/",
+        modelHomeDir:"/wp-content/plugins/wp-live2d/models/default-xmas/",
         textures:[
             "textures/0.png",
             "textures/1.png",

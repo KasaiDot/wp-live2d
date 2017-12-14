@@ -1,13 +1,13 @@
 <?php
 /**
  * @package WP_Live2D
- * @version 0.1.6.2
+ * @version 0.1.6.5
  */
 
 /*
 Plugin Name: Live2D
 Description: Live2D Plugin
-Version: 0.1.6.2
+Version: 0.1.6.5
 Author: Kasai.
 Author URI: http://kasai.moe
 License : GPLv3 or later
@@ -53,26 +53,19 @@ function live2d_widget_init(){
 }
 
 function live2d_add_css() {
-	$file = plugins_url("css/style.css", __FILE__);
-
-	if (file_exists($file)) {
-		wp_register_style("wp-live2d", $file);
-		wp_enqueue_style("wp-live2d");
-	}
+	wp_enqueue_style("wp-live2d-style", plugins_url("css/style.css", __FILE__));
 }
 
 function live2d_add_js() {
-	wp_enqueue_script("1", plugins_url("js/live2d/Live2D.min.js", __FILE__));
-	wp_enqueue_script("2", plugins_url("js/live2d/Live2DFramework.js", __FILE__));
-
-	wp_enqueue_script("3", plugins_url("js/live2d/MatrixStack.js", __FILE__));
-	wp_enqueue_script("4", plugins_url("js/live2d/ModelSettingJson.js", __FILE__));
-
-	wp_enqueue_script("5", plugins_url("js/live2d/PlatformManager.js", __FILE__));
-	wp_enqueue_script("6", plugins_url("js/live2d/LAppModel.js", __FILE__));
-	wp_enqueue_script("7", plugins_url("js/live2d/App.js", __FILE__));
-	wp_enqueue_script("8", plugins_url("js/model/LAppDefine.js", __FILE__));
-	wp_enqueue_script("9", plugins_url("js/model/LAppLive2DManager.js", __FILE__));
+	wp_enqueue_script("wp-live2d-lib", plugins_url("js/Live2D.min.js", __FILE__));
+	wp_enqueue_script("wp-live2d-framework", plugins_url("js/Live2DFramework.js", __FILE__));
+	wp_enqueue_script("wp-live2d-matrix", plugins_url("js/MatrixStack.js", __FILE__));
+	wp_enqueue_script("wp-live2d-modelsetting", plugins_url("js/ModelSettingJson.js", __FILE__));
+	wp_enqueue_script("wp-live2d-platformmanager", plugins_url("js/PlatformManager.js", __FILE__));
+	wp_enqueue_script("wp-live2d-appmodel", plugins_url("js/LAppModel.js", __FILE__));
+	wp_enqueue_script("wp-live2d-app", plugins_url("js/App.js", __FILE__));
+	wp_enqueue_script("wp-live2d-appdefine", plugins_url("js/LAppDefine.js", __FILE__));
+	wp_enqueue_script("wp-live2d-appmanager", plugins_url("js/LAppLive2DManager.js", __FILE__));
 }
 
 if (get_option("live2d_status")) {

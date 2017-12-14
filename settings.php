@@ -1,18 +1,21 @@
 ﻿<?php
 
-if(!current_user_can("wp_live2d")){
+if (!current_user_can("wp_live2d")) {
 	die("Error!");
 }
 
-if($_POST){
-	if($_POST["status"]) update_option("live2d_status",($_POST["status"] == "2" ? "0" : "1"));
+if ($_POST) {
+	if ($_POST["status"]) {
+		update_option("live2d_status", ($_POST["status"] == "2" ? "0" : "1"));
+	}
 ?>
 <div class="updated">
 		<p>
-			<strong><?php _e("Configuration saved", "wp-live2d");?></strong>
+			<strong><?php _e("Configuration saved!", "wp-live2d");?></strong>
 		</p>
 	</div>
-<?php }if(!$_GET["do"]){?>
+<?php }
+if (!$_GET["do"]) {?>
 <div class="wrap">
 		<h2><?php _e("Live2D - Settings", "wp-live2d");?></h2>
 		<form method="post">
@@ -47,12 +50,12 @@ if($_POST){
 							</h3>
 							<div class="inside">
 								<select name="status">
-									<option value="1" <?php if(get_option("live2d_status")) print("selected");?>>Yes</option>
-									<option value="2" <?php if(!get_option("live2d_status")) print("selected");?>>No</option>
+									<option value="1" <?php if (get_option("live2d_status")) print("selected");?>>Yes</option>
+									<option value="2" <?php if (!get_option("live2d_status")) print("selected");?>>No</option>
 								</select>
 							</div>
 						</div>
-<?php if(get_option("live2d_status")) : ?>
+<?php if (get_option("live2d_status")) : ?>
 						<div id="namediv" class="stuffbox">
 							<p>Hi!</p>
 						</div>
