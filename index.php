@@ -14,6 +14,8 @@ License : GPLv3 or later
 Text Domain : wp-live2d
 */
 
+if (!defined('ABSPATH')) exit;
+
 // require_once("globals.php");
 
 define("LIVE2D_FILEPATH", dirname(__FILE__));

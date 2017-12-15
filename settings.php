@@ -1,5 +1,7 @@
 ﻿<?php
 
+if (!defined('ABSPATH')) exit;
+
 if (!current_user_can("wp_live2d")) {
 	die("Error!");
 }
