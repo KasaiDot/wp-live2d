@@ -1,10 +1,7 @@
 ﻿<?php
 
-<<<<<<< HEAD
 if (!defined('ABSPATH')) exit;
 
-=======
->>>>>>> 046511316baa6fb54cf1caf0e196e508d3139509
 if (!current_user_can("wp_live2d")) {
 	die("Error!");
 }
