@@ -2,8 +2,8 @@
 
 if (!defined('ABSPATH')) exit;
 
-if (!current_user_can("wp_live2d")) {
-	die("Error!");
+if (!current_user_can("live2d")) {
+	wp_die("Error!");
 }
 
 if ($_POST) {
@@ -13,13 +13,13 @@ if ($_POST) {
 ?>
 <div class="updated">
 		<p>
-			<strong><?php _e("Configuration saved!", "wp-live2d");?></strong>
+			<strong>Configuration saved!</strong>
 		</p>
 	</div>
 <?php }
 if (!$_GET["do"]) {?>
 <div class="wrap">
-		<h2><?php _e("Live2D - Settings", "wp-live2d");?></h2>
+		<h2>Live2D - Settings</h2>
 		<form method="post">
 			<div id="poststuff" class="metabox-holder has-right-sidebar">
 				<div id="side-info-column" class="inner-sidebar">
@@ -29,15 +29,11 @@ if (!$_GET["do"]) {?>
 								<div class="submitbox" id="submitlink">
 									<div id="minor-publishing">
 										<div id="misc-publishing-actions">
-											<div class="misc-pub-section misc-pub-section-last">
-												Submit modifications.
-											</div>
+											<div class="misc-pub-section misc-pub-section-last">Submit modifications.</div>
 										</div>
 									</div>
 									<div id="major-publishing-actions">
-										<div id="publishing-action">
-											<input name="save" type="submit" class="button-primary" id="publish" value="Submit" />
-										</div>
+										<input name="save" type="submit" class="button-primary" id="publish" value="Submit" />
 									</div>
 								</div>
 							</div>
@@ -59,7 +55,7 @@ if (!$_GET["do"]) {?>
 						</div>
 <?php if (get_option("live2d_status")) : ?>
 						<div id="namediv" class="stuffbox">
-							<p>Hi!</p>
+							<p class="inside">Hi!</p>
 						</div>
 <?php endif; ?>
 						<div id="advanced-sortables" class="meta-box-sortables"></div>
