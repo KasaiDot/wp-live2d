@@ -7,7 +7,8 @@ if (!current_user_can("live2d")) {
 }
 
 if ($_POST) {
-	if ($_POST["status"]) {
+	if ($_POST["status"])
+		if (!wp_verify_nonce($_REQUEST['_wpnonce'], 'live2d_status')) die( 'Failed security check' );
 		update_option("live2d_status", ($_POST["status"] == "2" ? "0" : "1"));
 	}
 ?>
@@ -47,6 +48,7 @@ if (!$_GET["do"]) {?>
 								<label for="status">Activate Live2D</label>
 							</h3>
 							<div class="inside">
+								<?php wp_nonce_field('live2d_status'); ?>
 								<select name="status">
 									<option value="1" <?php if (get_option("live2d_status")) print("selected");?>>Yes</option>
 									<option value="2" <?php if (!get_option("live2d_status")) print("selected");?>>No</option>
