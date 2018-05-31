@@ -7,7 +7,7 @@ if (!current_user_can("live2d")) {
 }
 
 if ($_POST) {
-	if ($_POST["status"])
+	if ($_POST["status"]) {
 		if (!wp_verify_nonce($_REQUEST['_wpnonce'], 'live2d_status')) die( 'Failed security check' );
 		update_option("live2d_status", ($_POST["status"] == "2" ? "0" : "1"));
 	}
