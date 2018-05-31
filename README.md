@@ -2,7 +2,7 @@
 
 ```
 === Live2D ===
-Author: KasaiDot
+Author: Kasai.
 Tags: live2d
 Requires at least: 4.7.4
 Tested up to: 4.7.4

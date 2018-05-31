@@ -20,7 +20,7 @@ function ModelSettingJson() {
     this.json = {};
 }
 
-ModelSettingJson.prototype.loadModelSettingObj = function(object, callback) {
+ModelSettingJson.prototype.loadModelSettingObj = function (object, callback) {
     var thisRef = this;
     var pm = Live2DFramework.getPlatformManager();
     thisRef.json = object;
@@ -28,10 +28,10 @@ ModelSettingJson.prototype.loadModelSettingObj = function(object, callback) {
 };
 
 
-ModelSettingJson.prototype.loadModelSetting = function(path, callback) {
+ModelSettingJson.prototype.loadModelSetting = function (path, callback) {
     var thisRef = this;
     var pm = Live2DFramework.getPlatformManager();
-    pm.loadBytes(path, function(buf) {
+    pm.loadBytes(path, function (buf) {
         var str = String.fromCharCode.apply(null, new Uint8Array(buf));
         thisRef.json = JSON.parse(str);
         callback();
@@ -39,7 +39,7 @@ ModelSettingJson.prototype.loadModelSetting = function(path, callback) {
 };
 
 
-ModelSettingJson.prototype.getTextureFile = function(n) {
+ModelSettingJson.prototype.getTextureFile = function (n) {
     if (this.json[this.TEXTURES] == null || this.json[this.TEXTURES][n] == null)
         return null;
 
@@ -47,19 +47,19 @@ ModelSettingJson.prototype.getTextureFile = function(n) {
 }
 
 
-ModelSettingJson.prototype.getModelFile = function() {
+ModelSettingJson.prototype.getModelFile = function () {
     return this.json[this.MODEL];
 };
 
 
-ModelSettingJson.prototype.getTextureNum = function() {
+ModelSettingJson.prototype.getTextureNum = function () {
     if (this.json[this.TEXTURES] == null) return 0;
 
     return this.json[this.TEXTURES].length;
 }
 
 
-ModelSettingJson.prototype.getHitAreaNum = function() {
+ModelSettingJson.prototype.getHitAreaNum = function () {
     if (this.json[this.HIT_AREAS] == null)
         return 0;
 
@@ -67,7 +67,7 @@ ModelSettingJson.prototype.getHitAreaNum = function() {
 }
 
 
-ModelSettingJson.prototype.getHitAreaID = function(n) {
+ModelSettingJson.prototype.getHitAreaID = function (n) {
     if (this.json[this.HIT_AREAS] == null ||
         this.json[this.HIT_AREAS][n] == null)
         return null;
@@ -76,7 +76,7 @@ ModelSettingJson.prototype.getHitAreaID = function(n) {
 }
 
 
-ModelSettingJson.prototype.getHitAreaName = function(n) {
+ModelSettingJson.prototype.getHitAreaName = function (n) {
     if (this.json[this.HIT_AREAS] == null ||
         this.json[this.HIT_AREAS][n] == null)
         return null;
@@ -85,46 +85,46 @@ ModelSettingJson.prototype.getHitAreaName = function(n) {
 }
 
 
-ModelSettingJson.prototype.getPhysicsFile = function() {
+ModelSettingJson.prototype.getPhysicsFile = function () {
     return this.json[this.PHYSICS];
 }
 
 
-ModelSettingJson.prototype.getPoseFile = function() {
+ModelSettingJson.prototype.getPoseFile = function () {
     return this.json[this.POSE];
 }
 
 
-ModelSettingJson.prototype.getExpressionNum = function() {
+ModelSettingJson.prototype.getExpressionNum = function () {
     return (this.json[this.EXPRESSIONS] == null) ? 0 : this.json[this.EXPRESSIONS].length;
 }
 
 
-ModelSettingJson.prototype.getExpressionFile = function(n) {
+ModelSettingJson.prototype.getExpressionFile = function (n) {
     if (this.json[this.EXPRESSIONS] == null)
         return null;
     return this.json[this.EXPRESSIONS][n][this.FILE];
 }
 
 
-ModelSettingJson.prototype.getExpressionName = function(n) {
+ModelSettingJson.prototype.getExpressionName = function (n) {
     if (this.json[this.EXPRESSIONS] == null)
         return null;
     return this.json[this.EXPRESSIONS][n][this.NAME];
 }
 
 
-ModelSettingJson.prototype.getLayout = function() {
+ModelSettingJson.prototype.getLayout = function () {
     return this.json[this.LAYOUT];
 }
 
 
-ModelSettingJson.prototype.getInitParamNum = function() {
+ModelSettingJson.prototype.getInitParamNum = function () {
     return (this.json[this.INIT_PARAM] == null) ? 0 : this.json[this.INIT_PARAM].length;
 }
 
 
-ModelSettingJson.prototype.getMotionNum = function(name) {
+ModelSettingJson.prototype.getMotionNum = function (name) {
     if (this.json[this.MOTION_GROUPS] == null ||
         this.json[this.MOTION_GROUPS][name] == null)
         return 0;
@@ -133,7 +133,7 @@ ModelSettingJson.prototype.getMotionNum = function(name) {
 }
 
 
-ModelSettingJson.prototype.getMotionFile = function(name, n) {
+ModelSettingJson.prototype.getMotionFile = function (name, n) {
     if (this.json[this.MOTION_GROUPS] == null ||
         this.json[this.MOTION_GROUPS][name] == null ||
         this.json[this.MOTION_GROUPS][name][n] == null)
@@ -143,7 +143,7 @@ ModelSettingJson.prototype.getMotionFile = function(name, n) {
 }
 
 
-ModelSettingJson.prototype.getMotionSound = function(name, n) {
+ModelSettingJson.prototype.getMotionSound = function (name, n) {
     if (this.json[this.MOTION_GROUPS] == null ||
         this.json[this.MOTION_GROUPS][name] == null ||
         this.json[this.MOTION_GROUPS][name][n] == null ||
@@ -154,7 +154,7 @@ ModelSettingJson.prototype.getMotionSound = function(name, n) {
 }
 
 
-ModelSettingJson.prototype.getMotionFadeIn = function(name, n) {
+ModelSettingJson.prototype.getMotionFadeIn = function (name, n) {
     if (this.json[this.MOTION_GROUPS] == null ||
         this.json[this.MOTION_GROUPS][name] == null ||
         this.json[this.MOTION_GROUPS][name][n] == null ||
@@ -165,7 +165,7 @@ ModelSettingJson.prototype.getMotionFadeIn = function(name, n) {
 }
 
 
-ModelSettingJson.prototype.getMotionFadeOut = function(name, n) {
+ModelSettingJson.prototype.getMotionFadeOut = function (name, n) {
     if (this.json[this.MOTION_GROUPS] == null ||
         this.json[this.MOTION_GROUPS][name] == null ||
         this.json[this.MOTION_GROUPS][name][n] == null ||
@@ -176,7 +176,7 @@ ModelSettingJson.prototype.getMotionFadeOut = function(name, n) {
 }
 
 
-ModelSettingJson.prototype.getInitParamID = function(n) {
+ModelSettingJson.prototype.getInitParamID = function (n) {
     if (this.json[this.INIT_PARAM] == null ||
         this.json[this.INIT_PARAM][n] == null)
         return null;
@@ -185,7 +185,7 @@ ModelSettingJson.prototype.getInitParamID = function(n) {
 }
 
 
-ModelSettingJson.prototype.getInitParamValue = function(n) {
+ModelSettingJson.prototype.getInitParamValue = function (n) {
     if (this.json[this.INIT_PARAM] == null || this.json[this.INIT_PARAM][n] == null)
         return NaN;
 
@@ -193,19 +193,19 @@ ModelSettingJson.prototype.getInitParamValue = function(n) {
 }
 
 
-ModelSettingJson.prototype.getInitPartsVisibleNum = function() {
+ModelSettingJson.prototype.getInitPartsVisibleNum = function () {
     return (this.json[this.INIT_PARTS_VISIBLE] == null) ? 0 : this.json[this.INIT_PARTS_VISIBLE].length;
 }
 
 
-ModelSettingJson.prototype.getInitPartsVisibleID = function(n) {
+ModelSettingJson.prototype.getInitPartsVisibleID = function (n) {
     if (this.json[this.INIT_PARTS_VISIBLE] == null || this.json[this.INIT_PARTS_VISIBLE][n] == null)
         return null;
     return this.json[this.INIT_PARTS_VISIBLE][n][this.ID];
 }
 
 
-ModelSettingJson.prototype.getInitPartsVisibleValue = function(n) {
+ModelSettingJson.prototype.getInitPartsVisibleValue = function (n) {
     if (this.json[this.INIT_PARTS_VISIBLE] == null || this.json[this.INIT_PARTS_VISIBLE][n] == null)
         return NaN;
 

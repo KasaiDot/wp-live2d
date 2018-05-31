@@ -48,7 +48,7 @@ if (!$_GET["do"]) {?>
 								<label for="status">Activate Live2D</label>
 							</h3>
 							<div class="inside">
-								<?php wp_nonce_field('live2d_status'); ?>
+								<?php wp_nonce_field("live2d_status"); ?>
 								<select name="status">
 									<option value="1" <?php if (get_option("live2d_status")) print("selected");?>>Yes</option>
 									<option value="2" <?php if (!get_option("live2d_status")) print("selected");?>>No</option>

@@ -15,38 +15,41 @@ class Live2D_Widget extends WP_Widget {
 	function static_files() {
 ?>
 <style type="text/css">
-#glcanvas{
-    position:absolute;
-    background-size:75%;
+#glcanvas {
+    position: absolute;
+    background-size: 75%;
 }
-#btnChange{
-    display:none;
+
+#btnChange {
+    display: none;
 }
-#model{
-    width:200px;
-    height:300px;
-    right:0px;
-    bottom:0px;
-    position:fixed;
-    z-index:200;
+
+#model {
+    width: 200px;
+    height: 300px;
+    right: 0px;
+    bottom: 0px;
+    position: fixed;
+    z-index: 200;
 }
-@media screen and (max-width:980px){
-    #glcanvas{
-        position:absolute;
-        background-size:75%;
-        display:none;
+
+@media screen and (max-width:980px) {
+    #glcanvas {
+        position: absolute;
+        background-size: 75%;
+        display: none;
     }
-    #btnChange{
-        display:none;
+    #btnChange {
+        display: none;
     }
-    #model{
-        width:200px;
-        height:300px;
-        right:0px;
-        bottom:0px;
-        position:fixed;
-        z-index:-1;
-        display:none;
+    #model {
+        width: 200px;
+        height: 300px;
+        right: 0px;
+        bottom: 0px;
+        position: fixed;
+        z-index: -1;
+        display: none;
     }
 }
 </style>
